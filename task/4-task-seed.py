@@ -8,14 +8,44 @@ from task.app.main import run
 #       Default: None or random unless specified on the LLM side
 #  User massage: Name a random animal
 
+# Let's try with a specific seed value
+seed_value = 42
+
+# First run with seed=42
+print("=== First run with seed=42 ===")
 run(
     deployment_name='gpt-4o',
-    # TODO:
-    #  1. Use `seed` parameter with value 42 (or whatever you want)
-    #  2. Use `n` parameter with value 5
+    print_request=True,
+    print_only_content=True,
+    seed=seed_value,
+    temperature=0.7  # Setting a non-zero temperature to see randomness
 )
 
-# Check the content in choices. The expected result is that in almost all choices the result will be the same.
-# If you restart the app and retry, it should be mostly the same.
-# Also, try it without `seed` parameter.
-# For Anthropic and Gemini this parameter will be ignored
+# Second run with the same seed=42 (should produce similar results)
+print("\n=== Second run with seed=42 ===")
+run(
+    deployment_name='gpt-4o',
+    print_request=True,
+    print_only_content=True,
+    seed=seed_value,
+    temperature=0.7
+)
+
+# Third run with a different seed
+print("\n=== Third run with seed=123 ===")
+run(
+    deployment_name='gpt-4o',
+    print_request=True,
+    print_only_content=True,
+    seed=123,
+    temperature=0.7
+)
+
+# Fourth run with no seed (should be different)
+print("\n=== Fourth run with no seed ===")
+run(
+    deployment_name='gpt-4o',
+    print_request=True,
+    print_only_content=True,
+    temperature=0.7
+)
