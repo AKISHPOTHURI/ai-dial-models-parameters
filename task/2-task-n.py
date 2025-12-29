@@ -14,29 +14,29 @@ from task.app.main import run
 #  1. Provide `deployment_name` with model from the list above👆
 #  2. Use `n` parameter with value in range from 1 to 5!
 
-run(
-    deployment_name='gpt-4o',
-    print_request=True,
-    print_only_content=True,
-    n=1
-)
+# run(
+#     deployment_name='gpt-4o',
+#     print_request=True,
+#     print_only_content=True,
+#     n=1
+# )
 
 run(
-    deployment_name='claude-3-7-sonnet@20250219',
+    deployment_name='gpt-4o',
     print_request=True,
     print_only_content=True,
     n=2
 )
 
 run(
-    deployment_name='gemini-2.5-pro',
+    deployment_name='gpt-4o',
     print_request=True,
     print_only_content=True,
     n=3
 )
 
 run(
-    deployment_name='gemini-2.5-pro',
+    deployment_name='gpt-4o',
     print_request=True,
     print_only_content=True,
     n=4
