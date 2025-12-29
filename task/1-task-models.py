@@ -11,11 +11,26 @@ from task.app.main import run
 # - claude-3-7-sonnet@20250219
 # - gemini-2.5-pro
 
+# First, let's try with GPT-4o
+print("=== Testing with GPT-4o ===")
 run(
-    deployment_name='INSERT_DEPLOYMENT_NAME',
-    print_request=False, # Switch to False if you do not want to see the request in console
-    print_only_content=False, # Switch to True if you want to see only content from response
+    deployment_name='gpt-4o',
+    print_request=True,
+    print_only_content=False,
 )
 
-# The main goal of this task is to explore the functional capabilities of DIAL to be able to work with different
-# LLMs through unified API
+# Next, let's try with Claude
+print("\n=== Testing with Claude 3.7 Sonnet ===")
+run(
+    deployment_name='claude-3-7-sonnet@20250219',
+    print_request=True,
+    print_only_content=False,
+)
+
+# Finally, let's try with Gemini
+print("\n=== Testing with Gemini 2.5 Pro ===")
+run(
+    deployment_name='gemini-2.5-pro',
+    print_request=True,
+    print_only_content=False,
+)
